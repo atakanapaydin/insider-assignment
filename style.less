@@ -1,0 +1,117 @@
+* {
+  padding: 0;
+  margin: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'IBM Plex Sans', sens-serif;
+}
+.container {
+  header {
+    height: 65px;
+    h1 {
+      padding: 0;
+      text-align: center;
+      color: #000;
+      font-weight: 700;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 25px;
+      line-height: 35px;
+    }
+  }
+  .navigation {
+    margin: 20px 0;
+    .save-area {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      label{
+          margin-bottom: 0;
+          margin-right: 10px;
+      }
+      .form-select {
+        margin-right: 20px;
+        padding: 5px 50px 5px 0;
+      }
+    }
+  }
+
+  .boxes {
+    .code-output {
+      height: 100%;
+      .code {
+        bottom: 0;
+        position: relative;
+        width: 100%;
+        height: 40vh;
+        border: unset;
+        background: #f8f9fa;
+        transition: all .5s ease;
+      }
+      .active{
+          height: 60vh;
+      }
+    }
+    .coding-area {
+      width: 100%;
+      height: auto;
+      min-height: 100px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      border: 1px solid #242424;
+      transition: all 0.3s ease-in-out;
+
+      &-save-area {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 10px;
+        background-color: #f8f9fa;
+        .minimize {
+          padding-right: 5px;
+          margin-right: 10px;
+          border-right: 1px solid #606060;
+        }
+      }
+
+      .code-editor-area {
+        display: flex;
+        @media (max-width: 768px) {
+          flex-direction: column;
+        }
+
+        .prism-live {
+          min-height: 350px;
+          overflow-x: hidden;
+          width: 100%;
+          &:hover{
+              cursor: pointer;
+          }
+          transition: all .5s ease;
+          &.bigger {
+            width: 500%;
+          }
+        }
+
+        > div {
+          width: 100%;
+          border-left: 15px solid #555865;
+        }
+
+        > div:first-child {
+          border-left: none;
+        }
+      }
+      .active {
+        opacity: 0;
+        visibility: hidden;
+        height: 0;
+      }
+    }
+  }
+}

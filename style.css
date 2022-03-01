@@ -1,0 +1,109 @@
+* {
+  padding: 0;
+  margin: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'IBM Plex Sans', sens-serif;
+}
+.container header {
+  height: 65px;
+}
+.container header h1 {
+  padding: 0;
+  text-align: center;
+  color: #000;
+  font-weight: 700;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  line-height: 35px;
+}
+.container .navigation {
+  margin: 20px 0;
+}
+.container .navigation .save-area {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.container .navigation .save-area label {
+  margin-bottom: 0;
+  margin-right: 10px;
+}
+.container .navigation .save-area .form-select {
+  margin-right: 20px;
+  padding: 5px 50px 5px 0;
+}
+.container .boxes .code-output {
+  height: 100%;
+}
+.container .boxes .code-output .code {
+  bottom: 0;
+  position: relative;
+  width: 100%;
+  height: 40vh;
+  border: unset;
+  background: #f8f9fa;
+  transition: all 0.5s ease;
+}
+.container .boxes .code-output .active {
+  height: 60vh;
+}
+.container .boxes .coding-area {
+  width: 100%;
+  height: auto;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid #242424;
+  transition: all 0.3s ease-in-out;
+}
+.container .boxes .coding-area-save-area {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 10px;
+  background-color: #f8f9fa;
+}
+.container .boxes .coding-area-save-area .minimize {
+  padding-right: 5px;
+  margin-right: 10px;
+  border-right: 1px solid #606060;
+}
+.container .boxes .coding-area .code-editor-area {
+  display: flex;
+}
+@media (max-width: 768px) {
+  .container .boxes .coding-area .code-editor-area {
+    flex-direction: column;
+  }
+}
+.container .boxes .coding-area .code-editor-area .prism-live {
+  min-height: 350px;
+  overflow-x: hidden;
+  width: 100%;
+  transition: all 0.5s ease;
+}
+.container .boxes .coding-area .code-editor-area .prism-live:hover {
+  cursor: pointer;
+}
+.container .boxes .coding-area .code-editor-area .prism-live.bigger {
+  width: 500%;
+}
+.container .boxes .coding-area .code-editor-area > div {
+  width: 100%;
+  border-left: 15px solid #555865;
+}
+.container .boxes .coding-area .code-editor-area > div:first-child {
+  border-left: none;
+}
+.container .boxes .coding-area .active {
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
+}
